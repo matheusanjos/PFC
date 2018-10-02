@@ -1,0 +1,198 @@
+@font-face {
+    font-family: Quinone;
+    src: url('../fonts/Quinone.otf');
+}
+
+@font-face {
+    font-family: Comforta;
+    src: url('../fonts/Comforta.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html, #site {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: lightgrey;
+}
+
+/* Navbar */
+
+.navbar {
+    background: #3c5baa;
+    border-bottom: 10px solid #999999;
+    font-family: Quinone;
+    font-size: 1.1em;
+}
+
+.nav-link:hover { text-shadow: 1px 1px 1px black; }
+
+/* Sidebar */
+
+.main {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 67px);
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 230px;
+    max-width: 230px;
+    height: 100%;
+    background: #3c5baa;
+    border-right: 10px solid #999999;
+    font-family: Quinone;
+    transition: all 0.3s;
+    font-size: 1.1em;
+}
+#sidebar.active {
+    margin-left: -230px;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+#sidebarLogo { width: 130px; }
+
+.sidebar-item {
+    display: block;
+    padding: 10px;
+    background-color: #355197;
+    color: #fff;
+    font-family: Quinone;
+}
+
+.sidebar-item:hover {
+    color: #355197;
+    background: #fff;
+    text-decoration: none;
+}
+
+.space {
+    border: none;
+    margin: 0.2rem 0;
+}
+
+.line-color {
+    border-top-color: rgba(255, 255, 255, 0.2)
+}
+
+/* Main Area */
+
+#content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    transition: all 0.3s;
+    font-family: Comforta;
+    color: #3c5baa;
+}
+
+#sidebarCollapse {
+    position: relative;
+    background-color: #3c5baa;
+    color: #fff;
+    margin: 10px;
+    height: 38px;
+    width: 40px;
+}
+#sidebarCollapse:hover {
+    background-color: #fff;
+    color: #3c5baa;
+}
+
+/* Form */
+
+.form-group { margin: 0 auto; }
+
+.form-group > label { font-weight: 700; }
+
+.form-check label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.form-check .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    margin-right: .3em;
+}
+
+.form-check .cr i {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 52%;
+    left: 15%;
+}
+
+.form-check input, .form-check p {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.form-check p {
+    margin-top: 7.5px;
+}
+
+.form-check label input[type="checkbox"] {
+    display: none;
+}
+
+.form-check label input[type="checkbox"] + .cr > i {
+    transform: scale(3) rotateZ(-20deg);
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+
+.form-check label input[type="checkbox"]:checked + .cr > i {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+}
+
+.form-check label input[type="checkbox"]:disabled + .cr {
+    opacity: .5;
+}
+
+#formButton {
+    display: flex;
+    justify-content: center;
+}
+
+#formButton > button {
+    margin: 0 auto;
+    color: #3c5baa;
+    background-color: #fff;
+}
+#formButton > button:hover {
+    margin: 0 auto;
+    color: #fff;
+    background-color: #3c5baa;
+}
+
+
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    #sidebar { margin-left: -230px; }
+    #sidebar.active { margin-left: 0; }
+}

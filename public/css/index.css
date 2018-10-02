@@ -1,0 +1,125 @@
+@font-face {
+    font-family: Quinone;
+    src: url(../fonts/Quinone.otf);
+}
+
+@font-face {
+    font-family: Comforta;
+    src: url(../fonts/Comforta.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html, #site {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: lightgrey;
+    background: url(../images/bg.jpg) no-repeat center top fixed;
+    background-size: cover;
+}
+
+/* Navbar */
+
+.navbar-toggler { border: none; }
+.navbar-toggler:focus { outline: none; }
+
+#logo { width: 10vw; min-width: 75px; }
+
+#itemLink {
+    font-family: Quinone;
+    font-size: 13pt;
+    text-align: center;
+}
+#itemLink:hover { text-shadow: 2px 2px 2px #1b284b; }
+
+#lineColor { border-top-color: rgba(255, 255, 255, 0.3); }
+
+/* Effects */
+
+.grow { transition: all .1s ease-in-out; }
+.grow:hover { transform: scale(1.02); }
+
+/* Main Area */
+
+#main {
+    display: flex;
+    height: 60vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#content {
+    color: #fff;
+    font-family: Quinone;
+}
+
+#content > label {
+    font-size: 4vw;
+}
+
+#content > button { font-size: 1.4vw; }
+#content > button:hover { color: #4265bd; }
+
+/* Modal */
+
+.modal-content {
+    background-color: #4265bd;
+    color: #fff;
+    font-family: Comforta;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.close { color: white; }
+.close:focus { outline: none; }
+
+.input-group-prepend {
+    width: 100%;
+    margin: none;
+}
+
+.form-group > label {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-control:focus { box-shadow: none; }
+
+#forgotPass {
+    color: #fff;
+    padding: 0;
+}
+#forgotPass:hover { color: #fff; }
+
+.modal-footer > button {
+    background-color: #2e4784;
+    color: white;
+}
+.modal-footer > button:hover {
+    background-color: white;
+    color: #2e4784;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    #itemLink { font-size: 10pt; }
+    #content > button { font-size: 12px; }
+    #content > label { font-size: 18pt; }
+}
+@media (max-width: 490px) {
+    #content > label { font-size: 14pt; }
+}
