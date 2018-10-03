@@ -5,7 +5,13 @@
 
     <h3 class="text-center">Pesquisa de Clientes</h3>
 
-    <form id="searchForm" action="{{ url('/search')}}" method="POST" class="mt-5 p-5">
+    <div>
+
+        {{ Auth::clientes()->email }}
+
+    </div>
+
+    <form id="searchForm" action="{{ url('/home')}}" method="POST" class="mt-5 p-5">
         {{ csrf_field() }}
         <div class="form-group col-md-8">
             <label class="distancia" for="">Razão Social</label>
