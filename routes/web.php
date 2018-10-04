@@ -13,21 +13,23 @@
 
 Route::get('/', 'IndexController@showIndex');
 
-Route::resource('clientes', 'clientesController');
-
-Route::get('pesquisar', function () {
-    return view('pesquisar');
-});
-
-Route::get('cadastrar', function () {
-    return view('cadastrar');
-});
-
-Route::get('teste', function(){
-    $dados = DB::table('clientes')->where('email', 'cli@gmail.com')->get();
-    return $dados;
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/pesquisar', 'PesquisaController@index')->name('searchClientForm');
+Route::post('/pesquisar', 'PesquisaController@fazPesquisa')->name('resultClient');
+
+// Route::resource('clientes', 'clientesController');
+
+// Route::get('pesquisar', function () {
+//     return view('pesquisar');
+// });
+
+// Route::get('cadastrar', function () {
+//     return view('cadastrar');
+// });
+
+// Route::get('teste', function(){
+//     $dados = DB::table('clientes')->where('email', 'cli@gmail.com')->get();
+//     return $dados;
+// });

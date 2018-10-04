@@ -48,12 +48,7 @@
     </div>
 
     @component('components.modal-login')
-        <script>
-            $('#modalLogin').modal('show');
-        </script>
     @endcomponent
-
-
 
 </body>
 </html>

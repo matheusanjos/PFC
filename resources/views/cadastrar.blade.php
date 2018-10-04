@@ -5,7 +5,7 @@
 
     <h3 class="text-center">Cadastrar Clientes</h3>
 
-    <form action="clientes" method="post">
+    <form action="{{ url('cadastrar') }}" method="post">
 
         @csrf
 
