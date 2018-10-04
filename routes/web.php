@@ -11,13 +11,16 @@
 |
 */
 
-Route::get('/', 'IndexController@showIndex');
+Route::get('/', 'IndexController@Index');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/pesquisar', 'PesquisaController@index')->name('searchClientForm');
-Route::post('/pesquisar', 'PesquisaController@fazPesquisa')->name('resultClient');
+
+Route::get('/cadastrar', 'ClienteController@exibeFormularioCadastro');
+Route::post('/retorno', 'ClienteController@salvaCliente');
+
+Route::get('/pesquisar', 'ClienteController@exibeFormularioPesquisa');
+Route::post('/pesquisar', 'ClienteController@retornaResultadosPesquisa');
 
 // Route::resource('clientes', 'clientesController');
 

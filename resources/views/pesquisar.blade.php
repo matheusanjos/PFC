@@ -7,65 +7,54 @@
 
     <form id="searchForm" action="{{ url('/pesquisar')}}" method="POST" class="p-5">
         @csrf
-        
+
         <div class="input-group">
-            <input type="search" class="form-control mr-1" name="email">
+            <input type="search" class="form-control mr-1" name="busca" role="search">
 
             <div id="formButton">
                 <button type="submit" class="btn">
                     <i class="fas fa-search"></i>
-                    Pesquisar
                 </button>
             </div>
         </div>
 
     </form>
 
-    @if(isset($email))
-        <div><span>Resultados: {{ $email }}</span></div>
+    <div id="resultados" class="px-5">
+
+    @if(isset($details))
+        <p>Resultados de pesquisa para <b> {{ $query }} </b> são: </p>
+
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Cnpj</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($details as $user)
+                    <tr>
+                        <td>{{ $user->id_cliente }}</td>
+                        <td>{{ $user->nome }}</td>
+                        <td>{{ $user->cnpj }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->telefone }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+    @elseif(isset($message))
+        <p> {{ $message }} </p>
+
     @endif
-        {{-- <label class="distancia" for="">Razão Social</label> --}}
-        
-        {{-- <div class="form-group col-md-8">
-            <label for="">CNPJ</label>
-            <input type="text" class="form-control">
-        </div>
 
-        <br>
+    </div>
 
-        <div class="form-group col-md-8">
-
-            <label for="">Sistema</label>
-
-            <br>
-
-            <div class="form-check form-check-inline">
-                <label>
-                    <input type="checkbox" class="form-check-input">
-                    <span class="cr"><i class="fas fa-check"></i></span>
-                    <p>Syspdv</p>
-                </label>
-            </div>
-
-            <div class="form-check form-check-inline">
-                <label>
-                    <input type="checkbox" class="form-check-input">
-                    <span class="cr"><i class="fas fa-check"></i></span>
-                    <p>Eclética</p>
-                </label>
-            </div>
-
-            <div class="form-check form-check-inline">
-                <label>
-                    <input type="checkbox" class="form-check-input">
-                    <span class="cr"><i class="fas fa-check"></i></span>
-                    <p>ACSN</p>
-                </label>
-            </div>
-
-        </div>
-
-        <br> --}}
 
 
 </div>
