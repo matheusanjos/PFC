@@ -13,16 +13,16 @@
             <br>
 
             Nome
-            <input type="name" class="form-control" name="nome">
+            <input type="text" class="form-control" name="nome" required>
             <br>
             Cnpj
-            <input type="text" class="form-control" name="cnpj">
+            <input type="text" class="form-control" name="cnpj" maxlength="18" onkeydown="javascript: fMasc( this, mCNPJ );" required>
             <br>
             Email
-            <input type="email" class="form-control" name="email">
+            <input type="email" class="form-control" name="email" required>
             <br>
             Telefone
-            <input type="number" class="form-control" name="telefone">
+            <input type="text" class="form-control" name="telefone" maxlength="14" onkeydown="javascript: fMasc( this, mTel );">
 
             <br>
             <div id="formButton">
@@ -37,4 +37,7 @@
     </form>
 
 </div>
+
+<script src="{{ asset('js/formatar-input.js') }}" defer></script>
+
 @endsection

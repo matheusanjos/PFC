@@ -21,18 +21,3 @@ Route::post('/retorno', 'ClienteController@salvaCliente');
 
 Route::get('/pesquisar', 'ClienteController@exibeFormularioPesquisa');
 Route::post('/pesquisar', 'ClienteController@retornaResultadosPesquisa');
-
-// Route::resource('clientes', 'clientesController');
-
-// Route::get('pesquisar', function () {
-//     return view('pesquisar');
-// });
-
-// Route::get('cadastrar', function () {
-//     return view('cadastrar');
-// });
-
-// Route::get('teste', function(){
-//     $dados = DB::table('clientes')->where('email', 'cli@gmail.com')->get();
-//     return $dados;
-// });
