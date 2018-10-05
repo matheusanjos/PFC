@@ -10,7 +10,7 @@ function mTel(tel) {
     tel=tel.replace(/\D/g,"");
     tel=tel.replace(/^(\d)/,"($1");
     tel=tel.replace(/(.{3})(\d)/,"$1)$2");
-    if(tel.length == 12) {
+    if(tel.length > 12) {
         tel=tel.replace(/(.{4})$/,"-$1");
     }
     return tel;

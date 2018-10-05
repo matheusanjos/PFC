@@ -5,7 +5,7 @@
 
     <h3 class="text-center">Pesquisa de Clientes</h3>
 
-    <form id="searchForm" action="{{ url('/pesquisar')}}" method="POST" class="p-5">
+    <form id="searchForm" action="{{ url('/pesquisar')}}" method="POST" class="pt-5 px-5">
         @csrf
 
         <div class="input-group">
@@ -25,14 +25,27 @@
     @if(isset($details))
         <p>Resultados de pesquisa para <b> {{ $query }} </b> são: </p>
 
-        <table class="table table-hover table-bordered">
+        {{-- <div class="dataTables_length bs-select" id="dtBasicExample_length">
+            <label>
+                Show 
+                <select name="dtBasicExample_length" aria-controls="dtBasicExample" class="custom-select custom-select-sm form-control form-control-sm">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select> 
+                entries
+            </label>
+        </div> --}}
+
+        <table id="tabelaDados" class="table table-striped table-bordered" cellspacing="0">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Cnpj</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
+                    <th class="th-sm">Id<i class="fa fa-sort float-right m-1" aria-hidden="true"></i></th>
+                    <th class="th-sm">Nome<i class="fa fa-sort float-right m-1" aria-hidden="true"></i></th>
+                    <th class="th-sm">Cnpj<i class="fa fa-sort float-right m-1" aria-hidden="true"></i></th>
+                    <th class="th-sm">Email<i class="fa fa-sort float-right m-1" aria-hidden="true"></i></th>
+                    <th class="th-sm">Telefone<i class="fa fa-sort float-right m-1" aria-hidden="true"></i></th>
                 </tr>
             </thead>
             <tbody>

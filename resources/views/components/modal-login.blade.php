@@ -59,11 +59,5 @@
 
     </form>
 
-    <script>
-        $(document).ready(function() {
-            $('#modalLogin').modal('show');
-        });
-    </script>
-
 </body>
 </html>

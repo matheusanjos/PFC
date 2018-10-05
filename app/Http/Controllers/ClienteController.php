@@ -33,10 +33,6 @@ class ClienteController extends Controller
 
     public function retornaResultadosPesquisa()
     {
-        // $costumer = Cliente::all();
-
-        // return view('pesquisar', ['costumer'=>$costumer]);
-
         $busca = Input::get('busca');
         if($busca != ""){
             $cliente = Cliente::where('nome', 'LIKE', '%' . $busca . '%')
@@ -45,6 +41,6 @@ class ClienteController extends Controller
             if(count($cliente) > 0)
                 return view('pesquisar')->withDetails($cliente)->withQuery($busca);
         }
-        return view('pesquisar')->withMessage("no data found!");
+        return view('pesquisar')->withMessage("Dados não existem");
     }
 }
