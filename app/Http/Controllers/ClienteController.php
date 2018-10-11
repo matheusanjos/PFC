@@ -8,16 +8,6 @@ use Illuminate\Support\Facades\Input;
 
 class ClienteController extends Controller
 {
-    public function exibeFormularioCadastro()
-    {
-        return view('cadastrar');
-    }
-
-    public function exibeFormularioPesquisa()
-    {
-        return view('pesquisar');
-    }
-
     public function salvaCliente(Request $request){
 
         $costumer = new Cliente();
@@ -41,6 +31,6 @@ class ClienteController extends Controller
             if(count($cliente) > 0)
                 return view('pesquisar')->withDetails($cliente)->withQuery($busca);
         }
-        return view('pesquisar')->withMessage("Dados não existem");
+        return view('pesquisar')->withMessage("Dados não existem.");
     }
 }

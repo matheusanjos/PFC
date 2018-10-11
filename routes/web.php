@@ -16,8 +16,8 @@ Route::get('/', 'IndexController@Index');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/cadastrar', 'ClienteController@exibeFormularioCadastro');
+Route::get('/cadastrar', 'CadastroController@exibeFormularioCadastro');
 Route::post('/retorno', 'ClienteController@salvaCliente');
 
-Route::get('/pesquisar', 'ClienteController@exibeFormularioPesquisa');
+Route::get('/pesquisar', 'PesquisaController@exibeFormularioPesquisa');
 Route::post('/pesquisar', 'ClienteController@retornaResultadosPesquisa');
