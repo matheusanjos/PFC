@@ -19,5 +19,11 @@
             </a>
         </li>
         <li class="dropdown-divider line-color"></li>
+        <li>
+            <a href="{{ url('/cadastrar/funcionario') }}" class="sidebar-item text-center">
+                <i class="fas fa-user-plus"></i>
+                Cadastrar Funcionario
+            </a>
+        </li>
     </ul>
 </nav>

@@ -21,3 +21,6 @@ Route::post('/retorno', 'ClienteController@salvaCliente');
 
 Route::get('/pesquisar', 'PesquisaController@exibeFormularioPesquisa');
 Route::post('/pesquisar', 'ClienteController@retornaResultadosPesquisa');
+
+Route::get('/cadastrar/funcionario', 'FuncionarioController@index');
+Route::post('/retorno', 'FuncionarioController@cadastraFuncionario');
