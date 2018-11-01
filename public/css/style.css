@@ -98,6 +98,7 @@ body {
     transition: all 0.3s;
     font-family: Comforta;
     color: #3c5baa;
+    overflow: auto;
 }
 
 #sidebarCollapse {
@@ -119,83 +120,23 @@ body {
 
 .form-group > label { font-weight: 700; }
 
-.form-check label:after {
-    content: '';
-    display: table;
-    clear: both;
-}
+.alert { width: 300px; }
 
-.form-check .cr {
-    position: relative;
-    display: inline-block;
-    border: 1px solid #a9a9a9;
-    border-radius: .25em;
-    width: 1.3em;
-    height: 1.3em;
-    margin-right: .3em;
-}
-
-.form-check .cr i {
-    position: absolute;
-    font-size: .8em;
-    line-height: 0;
-    top: 52%;
-    left: 15%;
-}
-
-.form-check input, .form-check p {
-    float: none;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.form-check p {
-    margin-top: 7.5px;
-}
-
-.form-check label input[type="checkbox"] {
-    display: none;
-}
-
-.form-check label input[type="checkbox"] + .cr > i {
-    transform: scale(3) rotateZ(-20deg);
-    opacity: 0;
-    transition: all .3s ease-in;
-}
-
-.form-check label input[type="checkbox"]:checked + .cr > i {
-    transform: scale(1) rotateZ(0deg);
-    opacity: 1;
-}
-
-.form-check label input[type="checkbox"]:disabled + .cr {
-    opacity: .5;
-}
-
-#formButton {
+.vertical-align {
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
-#formButton > button {
-    margin: 0 auto;
-    color: #3c5baa;
-    background-color: #fff;
-}
-#formButton > button:hover {
-    margin: 0 auto;
-    color: #fff;
-    background-color: #3c5baa;
+/* Tabela */
+
+table {
+    counter-reset: tableCount;
 }
 
-/* Table Results */
-
-/* .table-wrapper-scroll-y {
-    display: block;
-    max-height: 200px;
-    overflow-y: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-  } */
+.ordem::before {
+    content: counter(tableCount);
+    counter-increment: tableCount;
+}
 
 /* Media Queries */
 

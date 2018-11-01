@@ -16,10 +16,10 @@ Route::get('/', 'IndexController@Index');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/cadastrar', 'CadastroController@exibeFormularioCadastro');
-Route::post('/retorno', 'ClienteController@salvaCliente');
+Route::get('/cadastrar', 'ClienteController@create');
+Route::post('/cadastrar', 'ClienteController@store');
 
-Route::get('/pesquisar', 'PesquisaController@exibeFormularioPesquisa');
+Route::get('/pesquisar', 'ClienteController@index');
 Route::post('/pesquisar', 'ClienteController@retornaResultadosPesquisa');
 
 Route::get('/cadastrar/funcionario', 'FuncionarioController@index');

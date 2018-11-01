@@ -19,16 +19,11 @@
             <input type="email" class="form-control" name="email" required>
             <br>
             Senha
-            <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="senha" required>
-            @if ($errors->has('password'))
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-            @endif
+            <input type="password" class="form-control" name="senha" required>
             <br>
             Confirmar Senha
-            <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="confirmar-senha" required>
-        
+            <input type="password" class="form-control" name="confirmar-senha" required>
+
             <br>
             <div id="formButton">
                 <button type="submit" class="btn">

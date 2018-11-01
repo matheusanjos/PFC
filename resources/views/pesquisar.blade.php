@@ -9,64 +9,46 @@
         @csrf
 
         <div class="input-group">
-            <input type="search" class="form-control mr-1" name="busca" role="search">
-
-            <div id="formButton">
-                <button type="submit" class="btn">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
+            <input id="busca" type="search" class="form-control mr-1" name="busca" role="search">
         </div>
 
     </form>
 
-    <div id="resultados" class="px-5">
+    <div class="p-5 table-responsive-sm">
 
-    @if(isset($details))
-        <p>Resultados de pesquisa para <b> {{ $query }} </b> são: </p>
-
-        {{-- <div class="dataTables_length bs-select" id="dtBasicExample_length">
-            <label>
-                Show 
-                <select name="dtBasicExample_length" aria-controls="dtBasicExample" class="custom-select custom-select-sm form-control form-control-sm">
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                </select> 
-                entries
-            </label>
-        </div> --}}
-
-        <table id="tabelaDados" class="table table-striped table-bordered" cellspacing="0">
+        <table id="tabelaClientes" class="table table-sm table-hover mx-auto text-nowrap" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th class="th-sm">Id<i class="fa fa-sort float-right m-1" aria-hidden="true"></i></th>
-                    <th class="th-sm">Nome<i class="fa fa-sort float-right m-1" aria-hidden="true"></i></th>
-                    <th class="th-sm">Cnpj<i class="fa fa-sort float-right m-1" aria-hidden="true"></i></th>
-                    <th class="th-sm">Email<i class="fa fa-sort float-right m-1" aria-hidden="true"></i></th>
-                    <th class="th-sm">Telefone<i class="fa fa-sort float-right m-1" aria-hidden="true"></i></th>
+                    <th>#</th>
+                    <th>Nome Fantasia</th>
+                    <th>Razão Social</th>
+                    <th>CNPJ</th>
+                    <th>Segmento</th>
+                    <th>Detalhes</th>
                 </tr>
             </thead>
-            <tbody>
-                @foreach ($details as $user)
-                    <tr>
-                        <td>{{ $user->id_cliente }}</td>
-                        <td>{{ $user->nome }}</td>
-                        <td>{{ $user->cnpj }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->telefone }}</td>
-                    </tr>
+
+            <tbody id="dadosClientes">
+                @foreach ($clientes as $c)
+                <tr>
+                    <td class="ordem"></td>
+                    <td>{{ $c->nome_fantasia }}</td>
+                    <td>{{ $c->razao_social }}</td>
+                    <td>{{ $c->cnpj }}</td>
+                    <td>{{ $c->segmento_mercado }}</td>
+                    <td>
+                        <button class="btn btn-info btn-xs" data-title="info">
+                            <span class="fas fa-info"></span>
+                        </button>
+                    </td>
+                </tr>
                 @endforeach
             </tbody>
         </table>
 
-    @elseif(isset($message))
-        <p> {{ $message }} </p>
-
-    @endif
-
     </div>
 
 </div>
+
+<script src="{{ asset('js/busca.js') }}" defer></script>
 @endsection
